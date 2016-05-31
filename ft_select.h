@@ -12,7 +12,7 @@
 
 #ifndef FT_SELECT
 # define FT_SELECT
-# include <unistd.h>
+# include <stdio.h>
 # include <stdlib.h>
 # include <termios.h>
 # include <unistd.h>
@@ -24,10 +24,13 @@ typedef struct	termios t_term;
 
 struct	s_env
 {
-		t_arg		*args_pivot;
-		char		*term_name;
-		t_term		term;
-		t_term		term_save;
+	t_arg		*args_pivot;
+	char		*term_name;
+	t_term		term;
+	t_term		term_save;
+
+	int			term_size_c;
+	int			term_size_l;
 };
 
 struct	s_arg
@@ -35,6 +38,9 @@ struct	s_arg
 	char			*str;
 	struct s_arg	*prev;
 	struct s_arg	*next;
+	int				pos_word_l;
+	int				pos_word_begin_c;
+	int				pos_word_end_c;
 };
 
 /*
