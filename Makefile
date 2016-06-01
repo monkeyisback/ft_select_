@@ -14,7 +14,7 @@ NAME = ft_select
 
 CFLAGS = -Wall -Wextra -Werror -lncurses
 
-SRCS = main.c text.c list.c
+SRCS = main.c text.c list.c signals.c singleton.c
 
 SRCO = $(SRCS:.c=.o)
 
